@@ -1,0 +1,26 @@
+﻿@page "/home"
+@page "/home/{userName}"
+@inherits LayoutComponentBase
+
+
+<div class="sidebar ">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-4">
+        <NavLink class="nav-link" href="loginpage">
+            <span class="oi oi-plus" aria-hidden="true"></span> Login
+        </NavLink>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+@code{
+
+    [Parameter]
+    public string userName { get; set; }
+}
